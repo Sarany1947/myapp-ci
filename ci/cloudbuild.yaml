@@ -1,6 +1,22 @@
 steps:
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "hello-ci:latest", "."]
+    args: 
+      [
+        "build", 
+        "-t",
+        "us-central-docker.pkg.dev/$PROJECT_ID/myapp-ci-repo/myapp:latest",
+        "." 
+      ] 
+
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+         "push",
+         "us-central1-docker.pkg.dev/$PROJECT_ID/myapp-ci-repo/myapp:latest"      
+      ]
+
+images:
+  - "us-central1-docker.pkg.dev/endtoend-devops/myapp-ci-repo/myapp:latest"
 
 options:
   logging: CLOUD_LOGGING_ONLY
