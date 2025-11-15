@@ -4,7 +4,7 @@ steps:
       [
         "build", 
         "-t",
-        "us-central-docker.pkg.dev/$PROJECT_ID/myapp-ci-repo/myapp:latest",
+        "us-central1-docker.pkg.dev/$PROJECT_ID/myapp-ci-repo/myapp:latest",
         "." 
       ] 
 
